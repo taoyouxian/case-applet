@@ -164,7 +164,11 @@
                     </button>
                 </div>
                 <div class="col-lg-12 divInput">
-                    <textarea class="form-control" rows="2" id="AD"></textarea>
+                    <textarea class="form-control" rows="2" id="AD"><%
+                        for( var i=0;i< tplData.AD.length; i++){
+                        var aItem= tplData.AD[i];
+                        %><%=i+1%>.<%=aItem.name%><%if(i< tplData.AD.length-1 ){ %>; <%}else { %><% }} %>
+                    </textarea>
                     <div class="divInputLabel">汇总说明</div>
                 </div>
             </div>
@@ -193,7 +197,11 @@
                     </button>
                 </div>
                 <div class="col-lg-12 divInput">
-                    <textarea class="form-control" rows="2" id="DD"></textarea>
+                    <textarea class="form-control" rows="2" id="DD"><%
+                        for( var i=0;i< tplData.DD.length; i++){
+                        var aItem= tplData.DD[i];
+                        %><%=i+1%>.<%=aItem.name%><%if(i< tplData.DD.length-1 ){ %>; <%}else { %><% }} %>
+                    </textarea>
                     <div class="divInputLabel">汇总说明</div>
                 </div>
             </div>
@@ -222,7 +230,11 @@
                     </button>
                 </div>
                 <div class="col-lg-12 divInput">
-                    <textarea class="form-control" rows="2" id="AS"></textarea>
+                    <textarea class="form-control" rows="2" id="AS"><%
+                        for( var i=0;i< tplData.AS.length; i++){
+                        var aItem= tplData.AS[i];
+                        %><%=i+1%>.<%=aItem.name%><%if(i< tplData.AS.length-1 ){ %>; <%}else { %><% }} %>
+                    </textarea>
                     <div class="divInputLabel">汇总说明</div>
                 </div>
             </div>
@@ -251,7 +263,11 @@
                     </button>
                 </div>
                 <div class="col-lg-12 divInput">
-                    <textarea class="form-control" rows="2" id="H"></textarea>
+                    <textarea class="form-control" rows="2" id="H"><%
+                        for( var i=0;i< tplData.H.length; i++){
+                        var aItem= tplData.H[i];
+                        %><%=i+1%>.<%=aItem.name%><%if(i< tplData.H.length-1 ){ %>; <%}else { %><% }} %>
+                    </textarea>
                     <div class="divInputLabel">汇总说明</div>
                 </div>
             </div>
@@ -280,7 +296,11 @@
                     </button>
                 </div>
                 <div class="col-lg-12 divInput">
-                    <textarea class="form-control" rows="2" id="DS"></textarea>
+                    <textarea class="form-control" rows="2" id="DS"><%
+                        for( var i=0;i< tplData.DS.length; i++){
+                        var aItem= tplData.DS[i];
+                        %><%=i+1%>.<%=aItem.name%><%if(i< tplData.DS.length-1 ){ %>; <%}else { %><% }} %>
+                    </textarea>
                     <div class="divInputLabel">汇总说明</div>
                 </div>
             </div>
@@ -309,7 +329,11 @@
                     </button>
                 </div>
                 <div class="col-lg-12 divInput">
-                    <textarea class="form-control" rows="2" id="DI"></textarea>
+                    <textarea class="form-control" rows="2" id="DI"><%
+                        for( var i=0;i< tplData.DI.length; i++){
+                        var aItem= tplData.DI[i];
+                        %><%=i+1%>.<%=aItem.name%><%if(i< tplData.DI.length-1 ){ %>; <%}else { %><% }} %>
+                    </textarea>
                     <div class="divInputLabel">汇总说明</div>
                 </div>
             </div>

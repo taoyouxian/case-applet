@@ -35,6 +35,8 @@ public class ApiController {
         return res;
     }
 
+    // doFcn?fcn=queryAll&args={"selector":{"sharename":"赵然"}}
+    // doFcn?fcn=createUser&args="15061126707","江苏常州","publickey","流向","男","1995-05-26","3256452133665412"
     @RequestMapping(value = "/doFcn")
     public String doFcn(@RequestParam("fcn") String fcn, @RequestParam("args") String... args) {
         boolean invoke = false;
@@ -54,11 +56,23 @@ public class ApiController {
         String record = "";
         try {
             record = chain.executeChaincode(client, channel, invoke, fcn, args);
-            j.setDatas(record);
-            j.setMsg("查询正确");
-            j.setState(1);
+            logger.info(fcn + " result: " + record);
+            if (record.contains("error")) {
+                j.setDatas(record);
+                j.setMsg(fcn + " fail");
+            } else if (record.equals(null)) {
+                j.setDatas(record);
+                j.setMsg(fcn + " fail");
+            } else {
+//                record = record.replace("\"", "'");
+                j.setDatas(record);
+                j.setMsg(fcn + " success");
+                j.setState(1);
+            }
         } catch (Exception e) {
-            j.setMsg(e.getMessage());
+            j.setDatas(record);
+            j.getErrorList().add(e.getMessage());
+            j.setMsg(fcn + " fail");
         }
         String res = JSON.toJSONString(j);
         return res;

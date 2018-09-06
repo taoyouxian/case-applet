@@ -20,6 +20,7 @@
     <script src="Modules/User/User_List.js"></script>
     <script src="Modules/Case/Case_List.js"></script>
     <script src="Modules/Video/Video_List.js"></script>
+    <script src="Modules/Exam/Exam_List.js"></script>
     <title></title>
     <script>
         function doResize() {
@@ -391,6 +392,7 @@
             <div class="divUserPan pull-right clearfix">
                 <div class="divActions pull-left">
                     <ul class="clearfix">
+                        <li style="background-color:green" onclick="javascript:window.open('https://github.com/taoyouxian/case-applet' ,'_blank')"><i class="fa fa-github" style=" background-color:#fff; color:green; height:24px; line-height:24px; width:24px; text-align:center; border-radius:24px"></i> <span id="labTitleOrgCaption">项目代码库</span></li>
                         <li><i class="fa fa-user" style=" background-color:#fff; color:green; height:24px; line-height:24px; width:24px; text-align:center; border-radius:24px"></i> <span id="labTitleOrgCaption">系统管理员</span></li>
                         <li><i class="fa fa-key"></i> 修改密码</li>
                         <li><i class="fa fa-power-off"></i> 退出登录</li>
@@ -406,11 +408,11 @@
                     <div class="divTitle"><i class="fa fa-list"></i> 功能菜单</div>
                     <div class="divBody">
                         <ul>
-                            <li class="LeftMenuItem" key="User"<!--onclick="Index.doOnPickMenu(this)-->"><i class="fa fa-users"></i> 病人管理</li>
-                            <li class="LeftMenuItem" key="Chanel"<!--onclick="Index.doOnPickMenu(this)-->"><i class="fa fa-list"></i> 病历管理</li>
+                            <li class="LeftMenuItem" key="User"<!--onclick="Index.doOnPickMenu(this)-->"><i class="fa fa-users"></i> 病人管理 (无)</li>
+                            <li class="LeftMenuItem" key="Chanel"<!--onclick="Index.doOnPickMenu(this)-->"><i class="fa fa-list"></i> 病历管理 (无)</li>
                             <li class="LeftMenuItem" key="Video"onclick="Index.doOnPickMenu(this)"><i class="fa fa-video-camera"></i> 演示视频</li>
                             <li class="LeftMenuItem" key="Case" onclick="Index.doOnPickMenu(this)"><i class="fa fa-file-pdf-o"></i> 电子病历</li>
-                            <li class="LeftMenuItem" key="Exam"<!--onclick="Index.doOnPickMenu(this)-->"><i class="fa fa-tv"></i> 在线测试</li>
+                            <li class="LeftMenuItem" key="Exam" onclick="Index.doOnPickMenu(this)"><i class="fa fa-tv"></i> 在线测试</li>
                         </ul>
                     </div>
                 </div>

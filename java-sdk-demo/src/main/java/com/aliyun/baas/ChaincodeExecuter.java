@@ -14,24 +14,18 @@
 
 package com.aliyun.baas;
 
-import java.io.UnsupportedEncodingException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hyperledger.fabric.sdk.*;
+import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
+import org.hyperledger.fabric.sdk.exception.ProposalException;
+
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.hyperledger.fabric.sdk.ChaincodeID;
-import org.hyperledger.fabric.sdk.Channel;
-import org.hyperledger.fabric.sdk.HFClient;
-import org.hyperledger.fabric.sdk.ProposalResponse;
-import org.hyperledger.fabric.sdk.TransactionProposalRequest;
-import org.hyperledger.fabric.sdk.TransactionRequest;
-import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
-import org.hyperledger.fabric.sdk.exception.ProposalException;
 
 public class ChaincodeExecuter {
     private static final Log logger = LogFactory.getLog(ChaincodeExecuter.class);
@@ -75,7 +69,7 @@ public class ChaincodeExecuter {
         this.waitTime = waitTime;
     }
 
-    public String executeTransaction(HFClient client, Channel channel, boolean invoke, String func, String... args) throws InvalidArgumentException, ProposalException, UnsupportedEncodingException, InterruptedException, ExecutionException, TimeoutException {
+    public String executeTransaction(HFClient client, Channel channel, boolean invoke, String func, String... args) {
         TransactionProposalRequest transactionProposalRequest = client.newTransactionProposalRequest();
         transactionProposalRequest.setChaincodeID(ccId);
         transactionProposalRequest.setChaincodeLanguage(TransactionRequest.Type.GO_LANG);
@@ -89,11 +83,26 @@ public class ChaincodeExecuter {
         List<ProposalResponse> failed = new LinkedList();
         String result = null;
 
-        Collection<ProposalResponse> transactionPropResp = channel.sendTransactionProposal(transactionProposalRequest, channel.getPeers());
+        Collection<ProposalResponse> transactionPropResp = null;
+        try {
+            transactionPropResp = channel.sendTransactionProposal(transactionProposalRequest, channel.getPeers());
+        } catch (ProposalException e) {
+            result = "error " + e.getMessage();
+            return result;
+        } catch (InvalidArgumentException e) {
+            result = "error " + e.getMessage();
+            return result;
+        }
         for (ProposalResponse response : transactionPropResp) {
 
             if (response.getStatus() == ProposalResponse.Status.SUCCESS) {
-                String payload = new String(response.getChaincodeActionResponsePayload());
+                String payload = null;
+                try {
+                    payload = new String(response.getChaincodeActionResponsePayload());
+                } catch (InvalidArgumentException e) {
+                    result = "error " + e.getMessage();
+                    return result;
+                }
                 logger.info(String.format("[√] Got success response from peer %s => payload: %s", response.getPeer().getName(), payload));
                 result = payload;
                 successful.add(response);
@@ -107,14 +116,25 @@ public class ChaincodeExecuter {
 
         if (invoke) {
             logger.info("Sending transaction to orderers...");
-            channel.sendTransaction(successful).thenApply(transactionEvent -> {
-                logger.info("Orderer response: txid" + transactionEvent.getTransactionID());
-                logger.info("Orderer response: block number: " + transactionEvent.getBlockEvent().getBlockNumber());
-                return null;
-            }).exceptionally(e -> {
-                logger.error("Orderer exception happened: ", e);
-                return null;
-            }).get(waitTime, TimeUnit.SECONDS);
+            try {
+                channel.sendTransaction(successful).thenApply(transactionEvent -> {
+                    logger.info("Orderer response: txid" + transactionEvent.getTransactionID());
+                    logger.info("Orderer response: block number: " + transactionEvent.getBlockEvent().getBlockNumber());
+                    return null;
+                }).exceptionally(e -> {
+                    logger.error("Orderer exception happened: ", e);
+                    return null;
+                }).get(waitTime, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                result = "error " + e.getMessage();
+                return result;
+            } catch (ExecutionException e) {
+                result = "error " + e.getMessage();
+                return result;
+            } catch (TimeoutException e) {
+                result = "error " + e.getMessage();
+                return result;
+            }
         }
 
         return result;

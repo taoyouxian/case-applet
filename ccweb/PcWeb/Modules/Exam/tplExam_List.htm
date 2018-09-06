@@ -1,0 +1,167 @@
+﻿<style>
+    a {
+        color: green;
+    }
+    .red {
+           color:red;
+    }
+    .divPanHeader {
+        border-top: 1px solid #ddd;
+    }
+</style>
+<div class="divPan">
+    <div class="divPanHeader clearfix">
+        <div class="divPanTitle pull-left">
+            <a href="javascript:void(0)"><i class="fa fa-hospital-o"></i> 模拟医院电子病历接口</a>
+        </div>
+        <div class="divPanTitleAction pull-left">
+            <ul>
+                <li>Url: http://case.merchain.cn:2019/acGetCase</li>
+                <li>Args: phone, hospital_number, registration_number</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="divPanBody">
+        <div class="divForms">
+            <div class="row">
+                <div class="col-lg-4 divInput">
+                    <input class="form-control" id="hospital_number" value="HD00123456" />
+                    <div class="divInputLabel">住院号</div>
+                </div>
+                <div class="col-lg-4 divInput">
+                    <input class="form-control" id="registration_number" value="000123456" />
+                    <div class="divInputLabel">登记号</div>
+                </div>
+                <div class="col-lg-4 divInput">
+                    <input class="form-control" id="phone" value="18811371111" />
+                    <div class="divInputLabel">手机号</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 divInput">
+                    <pre id="out_hospital" style="min-height:30px"></pre>
+                    <div class="divInputLabel">查询结果</div>
+                </div>
+                <div class="col-lg-3 divInput">
+                    <button class="btn btn-xs btn-warning" onclick="Exam_List.doPost(0)">
+                        <i class="fa fa-search"></i> 查询
+                    </button>
+                    <button class="btn btn-xs btn-info" onclick="Exam_List.doClear(0)">
+                        <i class="fa fa-repeat"></i> 置空
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <div class="divPanHeader clearfix">
+        <div class="divPanTitle pull-left">
+            <a href="javascript:void(0)"><i class="fa fa-cloud"></i> ChainCode测试接口</a>
+        </div>
+        <div class="divPanTitleAction pull-left">
+            <ul>
+                <li>Url: http://47.107.42.181:2020/doFcn</li>
+                <li>Args: fcn, args</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="divPanBody">
+        <div class="divForms">
+            <div class="row">
+                <div class="col-lg-4 divInput">
+                    <select id="fcn_c" onchange="Exam_List.doCreateAPI()">
+                        <option value="createUser">createUser</option>
+                        <option value="createCase">createCase</option>
+                        <option value="createShareCase">createShareCase</option>
+                    </select>
+                    <div class="divInputLabel red">创建接口</div>
+                </div>
+                <div class="col-lg-8 divInput">
+                    <input class="form-control" id="func_c" value='' />
+                    <div class="divInputLabel">作用</div>
+                </div>
+                <div class="col-lg-12 divInput">
+                    <textarea class="form-control" rows="3" id="examples_c"></textarea>
+                    <div class="divInputLabel">参数实例</div>
+                </div>
+                <div class="col-lg-12 divInput">
+                    <input class="form-control" id="args_c" value='15061126707,江苏常州,publickey,kate,女,1995-05-02,350802199505294511' />
+                    <div class="divInputLabel red">请求参数</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 divInput">
+                    <pre id="out_bass_c" style="min-height:30px"></pre>
+                    <div class="divInputLabel">创建结果</div>
+                </div>
+                <div class="col-lg-3 divInput">
+                    <button class="btn btn-xs btn-success" onclick="Exam_List.doPost(2)">
+                        <i class="fa fa-plus"></i> 创建
+                    </button>
+                    <button class="btn btn-xs btn-info" onclick="Exam_List.doClear(2)">
+                        <i class="fa fa-repeat"></i> 置空
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+
+    <div class="divPanBody">
+        <div class="divForms">
+            <div class="row">
+                <div class="col-lg-4 divInput">
+                    <select id="fcn" onchange="Exam_List.doChangeAPI()">
+                        <option value="queryAll">queryAll</option>
+                        <option value="queryInfo">queryInfo</option>
+                        <option value="queryShareCasesOwn">queryShareCasesOwn</option>
+                    </select>
+                    <div class="divInputLabel red">查询接口</div>
+                </div>
+                <div class="col-lg-8 divInput">
+                    <input class="form-control" id="func" value='' />
+                    <div class="divInputLabel">作用</div>
+                </div>
+                <div class="col-lg-12 divInput">
+                    <textarea class="form-control" rows="3" id="examples"></textarea>
+                    <div class="divInputLabel">参数实例</div>
+                </div>
+                <div class="col-lg-12 divInput">
+                    <input class="form-control" id="args" value='{"selector":{"sharename":"赵然"}}' />
+                    <div class="divInputLabel red">请求参数</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 divInput">
+                    <pre id="out_bass" style="min-height:30px"></pre>
+                    <div class="divInputLabel">查询结果</div>
+                </div>
+                <div class="col-lg-3 divInput">
+                    <button class="btn btn-xs btn-warning" onclick="Exam_List.doPost(1)">
+                        <i class="fa fa-search"></i> 查询
+                    </button>
+                    <button class="btn btn-xs btn-info" onclick="Exam_List.doClear(1)">
+                        <i class="fa fa-repeat"></i> 置空
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+
+    <div class="divPanFooter">
+        <!--<div class="divPost clearfix">
+            <button class="btn btn-sm btn-success pull-right" onclick="Exam_List.doPost()">
+                <i class="fa fa-save"></i> 保存
+            </button>
+            <button class="btn btn-sm btn-primary pull-right" onclick="">
+                <i class="fa fa-reply"></i> 重置
+            </button>
+        </div>-->
+    </div>
+</div>
