@@ -1,18 +1,18 @@
 # case-applet
-Artificial Chain Samples - Applet Module
+`Artificial Chain` Team Work Module
 
-"Case Chain”, to be a easy case by blockchain.
+Theme —— "Case Chain”, to provide a simple and better way for electronic medical record by blockchain.
 
 ## Demonstration
 [![IMAGE](https://github.com/taoyouxian/case-applet/blob/master/docs/assets/images/video.png)](http://47.107.42.181:8080/ccweb/PcWeb/index.htm)
 
 - [Demo Video:](http://47.107.42.181:8080/ccweb/PcWeb/)
-- [Electronic Medical Record:](https://github.com/taoyouxian/case-applet/blob/master/docs/ref/case_template.pdf)
+- [Electronic Medical Record:](https://github.com/taoyouxian/case-applet/blob/master/docs/desc/case_template.pdf)
 - Online Test:
 
 ## Intro
-- [System Deployment Diagram:](https://github.com/taoyouxian/case-applet/blob/master/docs/ref/deployment.pdf)
-- [Simulation Scenario:](https://github.com/taoyouxian/case-applet/blob/master/docs/ref/scenario.pdf)
+- [System Deployment Diagram:](https://github.com/taoyouxian/case-applet/blob/master/docs/desc/deployment.pdf)
+- [Simulation Scenario:](https://github.com/taoyouxian/case-applet/blob/master/docs/desc/scenario.pdf)
 
 ## Project Structure
 * **applet**
@@ -36,6 +36,7 @@ For feedback and questions, feel free to email us:
 * `Longying Wu` navicate@163.com Harbin Institute of Technology, Shenzhen
 * `Shouyue Zhao` JiangNan University, Wuxi
 * `Sihang Zhang` Kunming Medical University, Kunming
+
 Our repository[[Fabric_Demo](https://github.com/taoyouxian/Fabric_Demo)] about `2018 Aliyun Blockchain Preliminary` is provided here.
 
 Welcome to contribute and submit pull requests :)
