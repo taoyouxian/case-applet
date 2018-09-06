@@ -1,0 +1,23 @@
+<!--logs.wxml-->
+<view class="view-container">
+  <view class='search-container'>
+    <van-search
+      value="{{ value }}"
+      placeholder="请输入手机号搜索分享对象"
+      use-action-slot
+      bind:search="onSearch"
+      bind:change="bindPhoneChange"
+    >
+      <view slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
+ </view>
+
+  <view class='search-list'>
+   
+    <van-cell-group>
+    <block wx:for="{{searchResult}}">
+        <van-cell title="{{item.name}}" label="{{item.from}}" is-link bind:click="doShare" />
+    </block>
+    </van-cell-group>
+  </view>
+</view>

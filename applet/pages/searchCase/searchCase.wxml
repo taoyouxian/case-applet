@@ -1,0 +1,49 @@
+<!--pages/searchCase/searchCase.wxml-->
+<view class='container'>
+  <view class='search-field'>
+      <van-cell-group>
+        <van-field
+          value="{{ hospital_number }}"
+          label="住院号"
+          placeholder="请输入住院号"
+          required
+          error-message="{{}}"
+          bind:change="bindHospitalChange"
+        />
+        <van-field
+          value="{{ registration_number }}"
+          label="登记号"
+          placeholder="请输入登记号"
+          required
+          error-message="{{}}"
+          type="idcard"
+          bind:change="bindRegChange"
+        />
+        <van-field
+          value="{{ phone }}"
+          label="手机号"
+          placeholder="请输入手机号"
+          type="number"
+          bind:change="bindPhoneChange"
+          required
+        />
+     </van-cell-group>
+  </view>
+
+   <view class='search-btn'>
+    <van-button type="primary" size="small" bind:click="searchInfo" >查询</van-button>
+  </view>
+
+  <text>查询结果</text>
+  <view class='search-list'>
+  <text class='no-result' hidden='{{noresult}}'>查无结果</text>
+
+
+   <van-cell-group>
+    <block wx:for="{{searchResult}}">
+        <van-cell title="{{item.caption}}" label="{{item.discharge_time}}" data-id="{{index}}" bind:click="enterCaseInfo" is-link />
+    </block>
+    </van-cell-group>
+  </view>
+</view>
+

@@ -1,0 +1,7 @@
+<view class="container">
+  <image class='bg'  src='/images/poster.jpg'></image>
+  <view class='btn-group'>
+    <text class='btn' bindtap='enterIndex'>病人入口</text>
+    <text class='btn' bindtap='enterDoctor'>医生入口</text>
+  </view>
+</view>

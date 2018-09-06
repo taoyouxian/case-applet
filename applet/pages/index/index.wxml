@@ -1,0 +1,68 @@
+<!--病人视图-->
+<view class="container" hidden='{{isDoctor}}'>
+  <view class='view-container' bindtap=''>
+    <van-search custom-class="search-box" placeholder="搜索..." use-action-slot bind:tap="goToSearch">
+      <view slot="action" bind:tap="goToSearch">病例查询</view>
+    </van-search>
+
+  </view>
+
+  <view class='sort-container'>
+    <view class='sort-item sort-hospital'>
+      <text>医院排序</text>
+    </view>
+    <view class='sort-item sort-date'>
+      <text>日期排序</text>
+    </view>
+  </view>
+
+  <view class='list'>
+    <block wx:for="{{Cases}}">
+      <view class='list-group'>
+        <view class='list-left'>
+          <text class='list-title'> [{{item.code}}] {{item.caption}}  </text>
+          <text class='list-time'> {{item.admission_time}}  </text>
+        </view>
+        <view class='list-right'>
+          <text class='list-see' bindtap='enterCaseInfo'>查看</text>
+          <text class='list-share' bindtap='enterSearch'>分享</text>
+        </view>
+      </view>
+    </block>
+    
+    <block wx:if="{{!caselen}}">
+      <view class='list-group'>
+        <view class='list-left'>
+          <text class='list-title'> ...  </text>
+          <text class='list-time'> {{item.time}}  </text>
+        </view>
+        <view class='list-right'>
+           <text class='list-see' bindtap='enterCaseInfo'>查看</text>
+          <text class='list-share' bindtap='enterSearch'>分享</text> 
+        </view>
+      </view>
+    </block>
+    
+  </view>
+
+  <view class='view-container'>
+    <view class="img-box">
+      <text class='case-code'>病例码</text>
+      <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+    </view>
+  </view>
+
+  <view class="canvas-box">
+    <canvas hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas" />
+  </view>
+
+</view>
+
+
+<!-- 医生视图 -->
+<view class='container transition-bg' hidden='{{!isDoctor}}'>
+  <view class='circle-btn' bindtap='doScan'>
+    <image class='scan' src='/images/scan.png'></image>
+    <text class='scan-title'>点我扫码</text>
+  </view>
+</view>

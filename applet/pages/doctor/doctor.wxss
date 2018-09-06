@@ -1,0 +1,26 @@
+/* pages/doctor/doctor.wxss */
+
+
+
+.circle-btn{
+  display: flex;
+  position: absolute;
+  bottom: 80rpx;
+  background-color: #1296db;
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scan{
+  width: 100rpx;
+  height: 100rpx;
+}
+.scan-title{
+  margin-top: 30rpx;
+  color: #f0f0f0;
+  font-size: 32rpx;
+}

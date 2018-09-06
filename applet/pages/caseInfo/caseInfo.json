@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#111111",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "病例详情",
+  "usingComponents": {
+    "van-tag": "/components/tag/index"
+  }
+}

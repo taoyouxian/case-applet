@@ -1,0 +1,33 @@
+<!--pages/share/share.wxml-->
+<!--病人视图-->
+<view class="container" hidden='{{isDoctor}}'>
+
+
+  <view class='sort-container'>
+    <view class='sort-item sort-hospital' bindtap='doSwitch'>
+      <text>我的分享</text>
+    </view>
+    <view class='sort-item sort-date' bindtap='doSwitch'>
+      <text>别人分享</text>
+    </view>
+  </view>
+
+  <view class='list' hidden='{{!isMyShare}}'>
+      <van-cell-group>
+        <block wx:for="{{Cases}}">
+            <van-cell title=" {{item.hospital}}" data-id="{{index}}"   label="{{item.time}}" title-class="my-cell-title" is-link bind:click="enterCaseInfo" />
+        </block>
+      </van-cell-group>
+  </view>
+
+   <view class='list' hidden='{{isMyShare}}'>
+      <van-cell-group>
+        <block wx:for="{{Cases2}}">
+            <van-cell title=" {{item.hospital}}" data-id="{{index}}" label="{{item.time}}" title-class="my-cell-title" is-link bind:click="enterCaseInfo" />
+        </block>
+      </van-cell-group>
+  </view>
+
+</view>
+
+

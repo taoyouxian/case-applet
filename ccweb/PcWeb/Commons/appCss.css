@@ -1,0 +1,58 @@
+body { background-color:#e7e8eb; min-width: 960px;overflow-x: hidden;margin: 0;padding: 0;font-size: 12px;  font-family: "Arial","Hiragino Sans GB","Microsoft YaHei", \5fae\8f6f\96c5\9ed1, "Helvetica", "sans-serif"; color: #555;background: #eee; outline: 0;}
+
+.loginheader{ background-color:#fff; border-top:2px solid #e42e35; padding:10px 0px}
+.loginheader .logo{ height:120px ; width:120px; }
+.loginheader .logo img{  margin: 10px 15px; height:100px ; width: 100px; border-radius:50%; border:1px solid #dfdfdf;}
+.loginheader .mastitle{ font-size:2.5em; font-weight:bold; text-shadow:1px 1px 1px #F294E6; color:#f6296d; padding:10px 15px; padding-bottom:5px}
+.loginheader .subtitle{ font-size:1.5em; font-weight:bold; text-shadow:1px 1px 1px #F294E6; color:#f6296d; padding-left:15px;}
+.loginbody{ padding:50px;}
+.loginbody .main{  width:600px;  background-color:#fafafa ; margin:auto; border:1px solid #ddd }
+.loginbody .main .title{ padding:20px; font-size:1.5em; border-bottom:1px solid #eee}
+.loginbody .main .editor{ padding-top:20px; font-size:1.2em }
+.loginbody .main .editor input{ width:100%; border:1px solid #eee; padding:5px }
+.loginbody .main .lognBtns { border-top:1px solid #eee; margin-top:20px; padding:20px 100px}
+.loginfooter {background-color:#fff;width:100%;margin:0px;}
+.loginfooter{width: 100%;min-height: 200px;}
+.loginfooter .footer-item{}
+.loginfooter .footer-item .Title{ padding:10px 0px; font-size:1.2em;border-bottom:1px solid #424445} 
+
+
+.webheader{ background-color:#fff; border-top:3px solid green; padding:10px 0px}
+.webheader .logo{ }
+.webheader .logo img{  height:70px ; width:70px}
+.webheader .mastitle{ font-size:1.5em; font-weight:bold; text-shadow:1px 1px 1px #88b2fb; color:#0895b8; padding:5px 15px; padding-bottom:5px}
+.webheader .subtitle{ font-size:1em; font-weight:bold; text-shadow:1px 1px 1px #88b2fb; color:#0895b8; padding-left:15px;}
+
+.webbody{ padding:20px 0px}
+.webbody .main{}
+.webbody .main .pageHeader{  background-color:#fefefe; padding:10px; font-size:1.2em; color:#333; border-bottom:1px solid #dbdbdb}
+.webbody .main .pageMain{  background-color:#fefefe; padding:0px 15px ;}
+.webbody .main .pageMain .maincontent { min-height:500px; padding:15px 0px}
+.webbody .main .pageMain .datainfo { padding:20px 0px }
+.webbody .main .pageMain .datainfo .editor{ padding-bottom:10px }
+.webbody .main .pageMain .datainfo .editor input , textarea, select{ width:100%; padding:3px 5px; border:1px solid #ddd }
+
+
+.mainTable{  width:100%}
+.mainTable tr{  }
+.mainTable tr th,td{ border:1px solid #dbdbdb; padding:5px }
+.mainTable tr th { text-align:center ;padding:10px 0px; background-color:#f0f0f0 }
+.mainTable tbody tr:hover{  background-color:#fafafa}
+
+.BtnGroup{  font-size:0.8em}
+.BtnGroup ul{ list-style:none; padding:0px ; margin:0px}
+.BtnGroup ul li{ float:left; padding:5px 0px; border:1px solid #00acd6; border-right:0px; text-align:center; width:100px}
+.BtnGroup ul li:last-child{ border-right:1px solid #00acd6}
+.BtnGroup ul li.active{ background-color:#00c0ef; color:#fff }
+.BtnGroup ul li:hover{ cursor:pointer; background-color:#9ae7fa}
+
+.divFilter{ padding:10px}
+
+.divListItems{}
+.divListItems ul{ list-style:none; padding:0px }
+.divListItems ul li{ border-bottom:1px solid #ddd} 
+.divListItems ul li .Item{ padding:1px}
+.divListItems ul li .Item .Icon{float:left; text-align:center; font-size:3em; padding:20px}
+.divListItems ul li .Item .Info{float:left;  margin-left:80px}
+.divListItems ul li .Item .Info .MasterInfo{  font-size:1.2em; color:#444; margin:0px; height:40px; padding-top:15px  }
+.divListItems ul li .Item .Info .DetailInfo{ height:24px } 

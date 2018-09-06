@@ -1,0 +1,7 @@
+<!--pages/doctor/doctor.wxml-->
+<view class='container'>
+  <view class='circle-btn' bindtap='doScan'>
+    <image class='scan' src='/images/scan.png'></image>
+    <text class='scan-title' >点我扫码</text>
+  </view>
+</view>

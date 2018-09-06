@@ -1,0 +1,23 @@
+/* pages/searchCase/searchCase.wxss */
+.search-field{
+  margin-top: 30rpx;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.search-btn{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 120rpx;
+  margin-top: 60rpx;
+}
+.search-list{
+  width: 100%;
+}
+.no-result{
+  color: #999;
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  margin-left: 40%;
+}

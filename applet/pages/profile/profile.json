@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "个人信息",
+  "usingComponents": {
+    "van-field": "/components/field/index",
+    "van-button": "/components/button/index"
+  }
+}

@@ -1,0 +1,91 @@
+<!--pages/square/square.wxml-->
+<view class="page">
+  <view class="weui-cells__title">还没有话题？快发布一条吧！</view>
+  <view class="weui-flex" style="background:#fff;padding:3px 1px;">
+    <view class="weui-flex__item">
+      <view class="placeholder">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__bd">
+              <picker bindchange="bindTopicChange" value="{{topicIndex}}" range="{{topics}}">
+                <view class="weui-select" style="border:1px #ddd solid;font-size:14px;">{{topics[topicIndex]}}</view>
+              </picker>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-flex__item">
+      <view class="placeholder">
+        <navigator url="../release/release?title=navigate" hover-class="navigator-hover">
+          <button class="weui-btn" type="primary" plain="true" style="width:80%;font-size:14px;">发布话题</button>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="page__hd">
+    <view class="page__title" style="font-size:16px;">生活话题</view>
+
+  </view>
+  <view class="page__bd" wx:for="{{contentList}}">
+    <view class="weui-panel">
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image src="../../images/robotj.jpg" style="margin-right: 10px;vertical-align: middle;width:30px; height: 30px;"></image>
+            <!-- 用户头像 -->
+          </view>
+          <view class="weui-cell__bd">casedog</view>
+          <!-- 用户名称 -->
+        </view>
+      </view>
+
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <!-- 动态文字内容 -->
+          {{item.txt}}
+          <!-- 动态图片内容 -->
+          <image src="../../images/demo.jpg" style="width:98%" />
+          <!-- 动态 点赞、评论区域 -->
+          <view class="btn-area">
+            <view class="weui-media-box__info" style='margin-left:20px;'>
+              <view class="weui-media-box__info__meta" style='padding-top:5px;'>10 点赞</view>
+              <view class="weui-media-box__info__meta" style='padding-top:5px;'>5 评论</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" style='margin-right:0px;'>
+
+                <!-- 动态 点赞操作 begin checkbox操作 -->
+                <checkbox-group bindchange="checkboxChange">
+                  <label wx:for="{{checkboxItems}}" wx:key="value">
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+                    <image wx:if="{{!item.checked}}" src="../../images/good.png" style="width:20px;height:20px;" />
+                    <image wx:if="{{item.checked}}" src="../../images/good1.png" style="width:20px;height:20px;" />
+
+
+                  </label>
+                </checkbox-group>
+                <!-- 动态 点赞操作 end checkbox操作 -->
+
+              </view>
+
+            </view>
+          </view>
+
+          <view class="weui-cell weui-cell_input weui-cell_vcode" style="border:1px #ddd solid;font-size:12px;margin-top:5px;">
+
+            <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="写下你的评论吧" />
+            </view>
+            <view class="weui-cell__ft">
+              <view class="weui-vcode-btn" style='font-size:14px;'>评论</view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/self/self.wxml-->
+
+<view class='view-container'>
+  <view class='setting'>
+    <image class='setting-img' src='/images/setting.png' ></image>
+  </view>
+  <view class='self-top'>
+    <view class='self-info'>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+      <image class='self-avatar' src='{{userInfo.avatarUrl}}'></image>
+      <text class='self-name'>{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+
+   <view class='self-middle'>
+    <view class='self-list' bindtap='enterProfile'>
+        <view class='list-left'>
+          <image class='list-icon'  src='/images/user.png' ></image>
+          <text class='list-title'>个人信息</text>
+        </view>
+        <view class='list-right'>
+          <image class='list-icon'  src='/images/left.png' ></image>
+        </view>
+    </view>
+
+    <view class='self-list'>
+      <view class='list-left'>
+        <image class='list-icon'  src='/images/public.png' ></image>
+        <text class='list-title'>公钥</text>
+      </view>
+      <view class='list-right'>
+        <image class='list-icon'  src='/images/left.png' ></image>
+      </view>
+    </view>
+
+    <view class='self-list'>
+      <view class='list-left'>
+        <image class='list-icon'  src='/images/private.png' ></image>
+        <text class='list-title'>私钥</text>
+      </view>
+      <view class='list-right'>
+        <image class='list-icon'  src='/images/left.png' ></image>
+      </view>
+    </view>
+
+     <view class='self-list'>
+      <view class='list-left'>
+        <image class='list-icon'  src='/images/logout.png' ></image>
+        <text class='list-title'>解除绑定</text>
+      </view>
+      <view class='list-right'>
+        
+      </view>
+    </view>
+
+    
+
+
+  </view>
+</view>

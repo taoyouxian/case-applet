@@ -1,0 +1,14 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页",
+    "usingComponents": {
+      "van-search": "/components/search/index",
+      "van-cell": "/components/cell/index",
+      "van-cell-group": "/components/cell-group/index",
+      "van-row": "/components/row/index",
+      "van-col": "/components/col/index",
+      "van-button": "/components/button/index"
+    }
+}
+

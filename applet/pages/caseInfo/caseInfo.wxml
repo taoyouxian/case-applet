@@ -1,0 +1,115 @@
+<!--pages/caseInfo/caseInfo.wxml-->
+
+<!--wxml-->
+<wxs module="utils" src="../../utils/utils.wxs"></wxs>
+
+<view class='container'>
+  <view hidden='{{!isChain}}' class='btn-chain' bindtap="doChain">
+    <van-tag type="warning" custom-class="my-tag-chain" >上链</van-tag>
+  </view>
+  <view class='case-top'>
+    <text class='case-title'>{{caseInfo.name}}的病例</text>
+    <text  class='case-time'>{{caseInfo.discharge_time}}</text>
+  </view>
+  <view class='panel'>
+    <view class='panel-title'>
+      <van-tag type="success" custom-class="my-tag">基本信息</van-tag>
+    </view>
+    <view class='detail-content'>
+      <text>出生日期：{{caseInfo.birthday}}</text>
+      <text>性别：{{caseInfo.sex}}</text>
+      <text>科室：{{caseInfo.department}}</text>
+      <text>就诊医院：{{caseInfo.caption}}</text>
+      <text>疾病史：{{caseInfo.past_history}}</text>
+      <text>个人史：{{caseInfo.personal_history}}</text>
+      <text>婚育史:{{caseInfo.marriage_history}}</text>
+      <text>家族史：{{caseInfo.family_history}}</text>
+    </view>
+  </view>
+ 
+  <view class='panel'>
+    <view class='panel-title'>
+      <van-tag type="success" custom-class="my-tag">入院情况</van-tag>
+    </view>
+    <view class='detail-content'>
+      <text wx:if="{{utils.showLength(caseInfo.ASi)<1}}"> 暂无 </text>
+      <block wx:else>
+        <block  wx:for="{{utils.string2Json(caseInfo.ASi)}}"> 
+          <text>{{item}}</text>
+        </block>
+      </block>
+    </view>
+  </view>
+
+  <view class='panel'>
+    <view class='panel-title'>
+      <van-tag type="success" custom-class="my-tag">住院情况</van-tag>
+    </view>
+    <view class='detail-content'>
+     <text wx:if="{{utils.showLength(caseInfo.H)<1}}"> 暂无 </text>
+      <block wx:else>
+        <block wx:for="{{utils.string2Json(caseInfo.H)}}"> 
+          <text>{{item}}</text>
+        </block>
+      </block>
+    </view>
+  </view>
+
+   <view class='panel'>
+    <view class='panel-title'>
+      <van-tag type="success" custom-class="my-tag">出院记录</van-tag>
+    </view>
+    <view class='detail-content'>
+     <text wx:if="{{utils.showLength(caseInfo.DS)<1}}"> 暂无 </text>
+      <block wx:else>
+        <block wx:for="{{utils.string2Json(caseInfo.DS)}}"> 
+            <text>{{item}}</text>
+          </block>
+        </block>
+    </view>
+  </view>
+
+  <view class='panel'>
+    <view class='panel-title'>
+      <van-tag type="success" custom-class="my-tag">出院医嘱</van-tag>
+    </view>
+    <view class='detail-content'>
+     <text wx:if="{{utils.showLength(caseInfo.DI)<1}}"> 暂无 </text>
+      <block wx:else>
+        <block wx:for="{{utils.string2Json(caseInfo.DI)}}"> 
+          <text>{{item}}</text>
+        </block>
+       </block>
+    </view>
+  </view>
+
+   <view class='panel'>
+    <view class='panel-title'>
+      <van-tag type="success" custom-class="my-tag">检查报告-影像学</van-tag>
+    </view>
+    <view class='detail-content'>
+     <text wx:if="{{utils.showLength(caseInfo.IE)<1}}"> 暂无 </text>
+      <block wx:else>
+        <block wx:for="{{utils.string2Json(caseInfo.IE)}}"> 
+          <text>{{item.name}}</text>
+        </block>
+      </block>
+    </view>
+  </view>
+
+  <view class='panel'>
+    <view class='panel-title'>
+      <van-tag type="success" custom-class="my-tag">检查报告-实验室</van-tag>
+    </view>
+    <view class='detail-content'>
+     <text wx:if="{{utils.showLength(caseInfo.LE)<1}}"> 暂无 </text>
+      <block wx:else>
+        <block wx:for="{{utils.string2Json(caseInfo.LE)}}"> 
+          <text>{{item.name}}</text>
+        </block>
+      </block>
+    </view>
+  </view>
+
+</view>
+

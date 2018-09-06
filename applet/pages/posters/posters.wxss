@@ -1,0 +1,20 @@
+
+.btn-group{
+  margin-top: 700rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-group .btn{
+  color: #808080;
+  padding: 20rpx 150rpx;
+  border: 1px #52a083 solid;
+  margin-bottom: 30rpx;
+  border-radius: 40rpx;
+}
+
+page{
+    height: 100%;
+}

@@ -1,0 +1,21 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+/* 
+.search-list{
+  width: 100%;
+}
+
+.search-list .searchResult-title{
+  margin: 10rpx 20rpx;
+}
+
+.search-list .searchResult-title text{
+  color: #999;
+  font-size: 32rpx;
+} */

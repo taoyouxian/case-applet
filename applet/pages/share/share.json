@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#111111",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "分享",
+  "usingComponents": {
+    "van-cell": "/components/cell/index",
+    "van-cell-group": "/components/cell-group/index"
+  }
+}

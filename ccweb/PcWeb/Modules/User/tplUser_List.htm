@@ -1,0 +1,63 @@
+﻿
+<style>    
+    .divPageMain {
+        padding-top: 15px;
+        background-color: #f0f0f0;
+    }
+    .divPickOrgs {
+        background-color: #aaa;
+        padding: 15px;
+    }
+
+        .divPickOrgs .divOrg {
+            background-color: #fff;
+            margin-bottom: 15px;
+            border: 1px solid #fff;
+        }
+
+            .divPickOrgs .divOrg:hover {
+                cursor: pointer;
+                border: 1px solid #ddd;
+            }
+
+            .divPickOrgs .divOrg .divMas {
+                padding: 10px 15px;
+                color: #222;
+                font-weight: bold;
+            }
+
+            .divPickOrgs .divOrg .divDtl {
+                padding: 0px 15px;
+                padding-bottom: 10px;
+            }
+</style>
+
+<div class="divPan">
+    <div class="divPanHeader clearfix">
+        <div class="divPanTitle pull-left">
+            <i class="fa fa-users"></i> 病人管理
+        </div>
+        <div class="divPanTitleAction pull-right">
+            <a href="Index.htm?K0=User_Edit&ID=0"><i class="fa fa-plus"></i> 新添病人</a>
+        </div>
+    </div>
+
+    <div class="divPageMain">
+        <div class="divPickOrgs">
+            <div class="row">
+                <%
+                for( var i =0;i< tplData.length;i++){
+                var aItem = tplData[i];
+                %>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="divOrg" onclick="User_List.doEdit(<%=i %>)">
+                        <div class="divMas"><%=aItem.F_Caption %></div>
+                        <div class="divDtl"><%=aItem.F_Desc %></div>
+                    </div>
+                </div>
+                <%} %>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+/**index.wxss**/
+
+.sort-container{
+  margin-top: 20rpx;
+  width: 90%;
+  display: flex;
+  padding: 20rpx;
+}
+.sort-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #fff;
+  padding: 15rpx 0;
+  font-size: 32rpx;
+}
+
+.sort-hospital{
+  background-color: #1fe7c8;
+}
+.sort-date{
+  background-color: #3985d2;
+}
+
+
+.list{
+  width: 100%;
+  background: #f2f2f2;
+  padding: 20rpx 0;
+}
+.list-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #999;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.list-left{
+  display: flex;
+  padding: 20rpx;
+  flex-direction: column;
+  
+}
+.list-left .list-title{
+  font-size: 35rpx;
+}
+.list-left .list-time{
+  font-size: 32rpx;
+}
+
+.list-right{
+  display: flex;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.list-right .list-share{
+  margin-left: 20rpx;
+}
+
+
+.img-box{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -20rpx;
+  }
+  .case-code{
+    font-size: 42rpx;
+    color: #999;
+    margin-top: 10rpx;
+  }
+
+.img-box image{
+  width: 586rpx;
+  height: 586rpx;
+  background-color: #f9f9f9
+}
+
+
+
+.circle-btn{
+  display: flex;
+  position: absolute;
+  bottom: 80rpx;
+  background-color: #1296db;
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scan{
+  width: 100rpx;
+  height: 100rpx;
+}
+.scan-title{
+  margin-top: 30rpx;
+  color: #f0f0f0;
+  font-size: 32rpx;
+}
+
+
+.transition-bg{
+    background: linear-gradient(180deg, #e01532, #78f0c5,#ffffff);
+    background-size:100% 150%;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%; 
+    height: 100%;
+    animation:mymove 10s ease infinite;
+    -webkit-animation: mymove 10s ease infinite;
+    -moz-animation: mymove 10s ease infinite;
+}
+@keyframes mymove
+{
+   0% {
+    background-position: 0% 0%; 
+  }
+  50% {
+    background-position: 50% 100%; 
+  }
+  100% {
+     background-position: 100% 0%; 
+  }
+}

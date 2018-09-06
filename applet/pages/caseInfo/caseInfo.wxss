@@ -1,0 +1,58 @@
+/* pages/caseInfo/caseInfo.wxss */
+
+.my-tag{
+  font-size: 32rpx!important;
+  padding: 5rpx 40rpx !important;
+}
+.my-tag-chain{
+   font-size: 32rpx!important;
+   padding: 5rpx 40rpx !important;
+   background-color: #3d79f4 !important;
+   z-index: 10!important;
+}
+
+.case-top{
+  margin:20rpx auto 10rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.case-top .case-title{
+  font-size: 42rpx;
+  color: #777;
+}
+.case-top .case-time{
+  margin-top: 10rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.panel{
+  display: flex;
+  width: 100%;
+  margin: 10rpx 0;
+  padding: 20rpx 0;
+  background-color: #f0f0f0;
+  flex-direction: column;
+}
+
+.panel .panel-title{
+  padding: 10rpx 20rpx;
+}
+.panel .detail-content{
+  padding: 10rpx 50rpx 0 60rpx;
+  display: flex;
+  flex-direction: column;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.panel .detail-content text{
+  margin: 10rpx 0;
+}
+
+.btn-chain{
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+}

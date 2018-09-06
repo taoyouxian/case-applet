@@ -1,0 +1,16 @@
+var utils = {
+  string2Json: function (str) {
+    return JSON.parse(str)
+  },
+  showLength: function (arr) {
+    var array = JSON.parse(arr);
+    if (array === undefined || array.length == 0) {
+      return 0;
+    }
+    return array.length;
+  },
+}
+module.exports = {
+  string2Json: utils.string2Json,
+  showLength: utils.showLength
+}

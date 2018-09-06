@@ -1,0 +1,152 @@
+/*Home Begin*/
+/*筛选条件样式*/
+/*位置*/
+.divAddr {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divAddr .table {width: 100%;}
+.divAddr table tr td {text-align: left;padding-left: 10px;}
+.divAddr table tr .editor.active {font-weight:bold;color: red;}
+.divAddr table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divAddr .lab {width: 74px;text-align: center;} 
+/*Filter*/ 
+.divProcess{ padding-bottom:10px}
+.divProcess ul{ list-style:none; padding:0px; margin:0px ; border:1px solid #128abc; background-color:#5bc0de; color:#fff; border-radius:5px}  
+.divProcess ul li{ float:left; padding:7px 15px; border-right:1px solid #128abc;  }
+.divProcess ul li:hover{ cursor:pointer; font-weight:bold}
+.divProcess ul li:last-child{ border:0px}
+.divProcess ul li.active{ background-color:#fff; color:#128abc}
+.divProcess ul li:first-child.active{  border-radius:5px 0px 0px 5px }
+.divProcess ul li:last-child.active{  border-radius:0px 5px 5px 0px}
+/*房价*/ 
+.divPrice {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divPrice .table {width: 100%;}
+.divPrice table tr td {text-align: left;padding-left: 10px;}
+.divPrice table tr .editor.active {font-weight:bold;color: red;}
+.divPrice table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divPrice .lab {width: 74px;text-align: center;}
+/*星级*/ 
+.divStar {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divStar .table {width: 100%;}
+.divStar table tr td {text-align: left;padding-left: 10px;}
+.divStar table tr .editor.active {font-weight:bold;color: red;}
+.divStar table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divStar .lab {width: 74px;text-align: center;}
+/*品牌*/ 
+.divBrand {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divBrand .table {width: 100%;}
+.divBrand table tr td {text-align: left;padding-left: 10px;}
+.divBrand table tr .editor.active {font-weight:bold;color: red;}
+.divBrand table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divBrand .lab {width: 74px;text-align: center;}
+/*主题*/ 
+.divTheme {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divTheme .table {width: 100%;}
+.divTheme table tr td {text-align: left;padding-left: 10px;}
+.divTheme table tr .editor.active {font-weight:bold;color: red;}
+.divTheme table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divTheme .lab {width: 74px;text-align: center;}
+/*车型*/ 
+.divType {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divType .table {width: 100%;}
+.divType table tr td {text-align: left;padding-left: 10px;}
+.divType table tr .editor.active {font-weight:bold;color: red;}
+.divType table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divType .lab {width: 74px;text-align: center;}
+/*品牌*/ 
+.divPreference {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divPreference .table {width: 100%;}
+.divPreference table tr td {text-align: left;padding-left: 10px;}
+.divPreference table tr .editor.active {font-weight:bold;color: red;}
+.divPreference table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divPreference .lab {width: 74px;text-align: center;}
+/*座位*/ 
+.divSeat {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divSeat .table {width: 100%;}
+.divSeat table tr td {text-align: left;padding-left: 10px;}
+.divSeat table tr .editor.active {font-weight:bold;color: red;}
+.divSeat table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divSeat .lab {width: 74px;text-align: center;}
+/*自/手动*/ 
+.divTransmission {padding: 10px 0px 5px 10px;background-color: #fff;}
+.divTransmission .table {width: 100%;}
+.divTransmission table tr td {text-align: left;padding-left: 10px;}
+.divTransmission table tr .editor.active {font-weight:bold;color: red;}
+.divTransmission table tr .editor:hover {font-weight:bold;color: #444;cursor:pointer;} 
+.divTransmission .lab {width: 74px;text-align: center;}
+/*筛选条件*/
+.divSearch {padding: 10px 0px 5px 10px;background-color: #fff;border-bottom: 1px solid #dbdbdb;}
+.divSearch .table {width: 100%;}
+.divSearch table tr td {text-align: left;padding-left: 10px;} 
+.divSearch .lab {width: 74px;text-align: center;}
+/*地理位置*/
+.divFilter {padding: 10px;background-color: #fff; margin-top: 10px;}
+.divFilter table {width: 100%;}
+.divFilter table tr td {text-align: left;}
+.divFilter .lab {width: 74px;text-align: center;}
+.divFilter .editor {width: 130px;}
+.divFilter .editor input, select {width: 120px;} 
+
+/*房屋信息列表*/
+.HouseList {}
+.HouseList ul {list-style: none;float: left;padding: 0px;width: 100%;}
+.HouseList ul li {/*width: 100%;*/}
+.HouseList ul li .divItem {background-color: #fff;padding: 10px;margin-bottom: 10px;color: #999;}
+.HouseList ul li .divItem:hover {background-color: #fafafa;}
+.HouseList ul li .divItem .ImgIcon {float: left;width: 160px;height: 100px;/*border: 1px solid #dbdbdb;*/}
+.HouseList ul li .divItem .ImgIcon img {width: 160px;height: 100px;cursor:pointer}
+.HouseList ul li .divItem .ImgIcon img:hover {border: 1px solid #dbdbdb;}
+.HouseList ul li .divItem .ItemContent {margin-left: 180px;height: -90px;padding: 0px;}
+.HouseList ul li .divItem .ItemContent .MasterTitle {font-size: 14px;font-weight: bold;padding-bottom: 8px;color: #444;}
+.SubInfos {height: 24px;}
+.SubInfos .InfoBlod {font-weight: bold;color: #666;}
+/*Home End*/ 
+/*Zone Begin*/ 
+ /*点击左侧之后，右侧的样式*/
+.barTitle {}
+.barTitle .activeItem {background-color: Red;color: #fff;}
+.barTitle .activeItem:hover {color: #333;}
+.barTitle .LeftIcon {background-color: #fff;border-radius: 24px;width: 24px;height: 24px;padding: 6px;margin: 8px;}
+.barTitle .LeftCaption {height: 40px;line-height: 40px;font-size: 1.2em;}
+/*用户信息*/
+.userInfo {margin-top: 10px;}    
+.userInfo .infoCaption {padding-right: 5px;text-align: right;padding-top: 2px;}
+.userInfo .infoEditor {padding-left: 5px;text-align: left;}
+.userInfo .infoEditor input, textarea {width: 100%;border: 0px solid #dbdbdb;}
+/*租房信息列表*/
+.MsgList {}
+.MsgList table {width: 100%;}
+.MsgList table tr {}
+.MsgList table tr:hover {background-color: #f4f4f4;}
+.MsgList table tr th {text-align: center;padding: 7px 5px;background-color: #efefef;border-bottom: 1px solid #dbdbdb;border-top: 1px solid #dbdbdb;}
+.MsgList table tr td {padding: 5px 5px;border-bottom: 1px dashed #dbdbdb;}
+.action:hover {cursor: pointer;font-weight: bold;}
+/*Zone End*/ 
+
+
+/*筛选条件样式*/
+/*分类*/
+.divCeng .none { width:100%; padding:0px;box-shadow: 1px 1px 1px #aaa;}
+.divCeng .divTypes{padding: 0px;}
+.divCeng .divTypes .divLoad{padding: 10px 0px 5px 10px;background-color: #fff;}
+.divCeng .divTypes .divType{border-left: 1px solid #e32057;border-right: 1px solid #e32057;padding: 10px 0px 5px 10px;background-color: #fff;} 
+.divCeng .divTypes .divType table tr td {text-align: left;padding-left: 10px;}
+.divCeng .divTypes .divType table tr .editor{cursor:pointer;}
+.divCeng .divTypes .divType table tr .editor.active {font-weight:bold;color: #e32057;}
+.divCeng .divTypes .divType table tr .editor:hover {font-weight:bold;color: #444;} 
+.divCeng .divTypes .divType .Mas {width: 80px;}  
+/*筛选条件*/
+.divSearch {padding: 10px 0px 5px 0px;background-color: #fff; }
+.divSearch .table {width: 100%;}
+.divSearch table tr td {text-align: left;padding-left: 10px;} 
+.divSearch .Mas {width: 80px;color: #e42e35;}
+/*列表*/  
+.HouseList {padding:0px;width: 100%;}
+.HouseList ul {list-style: none;float: left;padding: 0px;width: 100%;}
+.HouseList ul li {width: 100%;border-bottom: 1px solid #efefef;margin-top: 10px;}
+.HouseList ul li .divItem {background-color: #fff;padding: 10px;color: #999;}
+.HouseList ul li .divItem:hover { box-shadow:1px 1px 1px #aaa } 
+.HouseList ul li .divItem .ItemContent {margin-left: 180px;height: 90px;padding: 0px;}
+.HouseList ul li .divItem .ItemContent .MasterTitle {font-size: 14px;font-weight: bold;padding-bottom: 8px;color: #444;} 
+.HouseList ul li .divItem .ItemContent .MasterTitle .subTitle:hover {color:#f6296d;cursor:pointer;} 
+.HouseList ul li .divItem .ItemContent .MasterTitle .label:hover {cursor:pointer;} 
+.HouseList ul li .divItem .ItemContent .SubInfos {height: 24px;}
+.HouseList ul li .divItem .ItemContent .SubInfos .InfoBlod {font-weight: bold;color: #666;}

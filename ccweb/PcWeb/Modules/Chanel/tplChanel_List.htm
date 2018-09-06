@@ -1,0 +1,53 @@
+﻿<style>
+    table.TableDatas{ width:100%; table-layout: fixed;}
+    table.TableDatas th{ background-color:#f0f0f0; padding:10px 5px; border:1px solid #ddd; text-align:center}
+    table.TableDatas td{ padding:7px 5px; border:1px solid #ddd;}
+    table.TableDatas td .divTdActions{ text-align:center}
+    table.TableDatas td .divTdActions ul{ list-style:none; padding:0px; margin:0px auto; display:inline-block; }
+    table.TableDatas td .divTdActions ul li{ float:left; padding:0px 5px; border-right:1px solid #ddd; color:#226e03; }
+    table.TableDatas td .divTdActions ul li:hover{ cursor:pointer; color:#0d92af}
+    table.TableDatas td .divTdActions ul li:last-child{ border-right:0px}
+    table.TableDatas td.outFlow{overflow: hidden; text-overflow:ellipsis; white-space: nowrap; width:100%}
+</style>
+<div class="divPan">
+    <div class="divPanHeader clearfix">
+        <div class="divPanTitle pull-left">
+            <i class="fa fa-list"></i> 病历管理
+        </div>
+        <div class="divPanTitleAction pull-right">
+            <a href="Index.htm?K0=Chanel_Edit&ID=0"><i class="fa fa-plus"></i> 新建病历</a>
+        </div>
+    </div>
+    <div class="divPanBody">
+        <table cellpadding="0" cellspacing="0" class="TableDatas">
+            <tr>
+                <th style="width:80px; border-top:1px solid #f3f3f3">编号</th>
+                <th style="width:160px; border-top:1px solid #f3f3f3">名称</th>
+                <th style="width:80px; text-align:center; border-top:1px solid #f3f3f3">负责人</th>
+                <th style=" border-top:1px solid #f3f3f3">备注说明</th>
+                <th style="width:150px; border-top:1px solid #f3f3f3">操作</th>
+            </tr>
+            <tbody>
+                <%
+                    for( var i=0;i< tplData.length;i++){
+                        var aItem = tplData[i];
+                %>
+                    <tr>
+                        <td  ><%=aItem.F_Code %></td>
+                        <td  ><%=aItem.F_Caption %></td>
+                        <td style=" text-align:center"><%=aItem.F_MasUserCaption %></td> 
+                        <td class="outFlow"> <%=aItem.F_Desc %> </td>
+                        <td  >
+                            <div class="divTdActions">
+                                <ul class="clearfix">
+                                    <li onclick="Chanel_List.doEdit(<%=i %>)"><i class="fa fa-edit"></i> 修改</li>
+                                    <li style="color:#c8085e;" onclick="Chanel_List.doDelete(<%=i %>)"><i class="fa fa-close"></i> 删除</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                <%} %>
+            </tbody>
+        </table>
+    </div>
+</div>
