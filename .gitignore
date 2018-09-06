@@ -525,3 +525,5 @@ ENV/
 
 # others
 fabric*
+
+node_modules/
